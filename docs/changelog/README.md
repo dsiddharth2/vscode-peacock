@@ -2,6 +2,12 @@
 
 All notable changes to the code will be documented in this file.
 
+## 4.4.0
+
+### Features
+
+- **Change to a Favorite Color** now includes **Custom color…**, which opens a color well and hex field so you can pick any color instead of only the recommended favorites. This follows the same public-API pattern as Workspace ID Pro (Quick Pick presets + a small custom-color webview). Cancel restores the previous color.
+
 ## 4.3.3
 
 ### Release update
