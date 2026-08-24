@@ -26,8 +26,7 @@ Let's see Peacock in action!
 1. Create/Open a VSCode Workspace ([Peacock only works in a Workspace](https://johnpapa.github.io/vscode-peacock/#/guide/?id=peacock-commands-are-not-appearing))
 1. Press `F1` to open the command palette
 1. Type `Peacock`
-1. Choose `Peacock: Change to a favorite color`
-1. Choose one of the pre-defined colors and see how it changes your editor
+1. Choose `Peacock: Pick a Color` to select any color, or `Peacock: Change to a favorite color` to pick from your favorites
 
 Now enjoy exploring the rest of the features explained in the docs!
 

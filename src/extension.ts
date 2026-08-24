@@ -12,6 +12,7 @@ import {
 import {
   resetWorkspaceColorsHandler,
   enterColorHandler,
+  pickColorHandler,
   changeColorToRandomHandler,
   changeColorToPeacockGreenHandler,
   changeColorToFavoriteHandler,
@@ -116,6 +117,7 @@ function registerCommands() {
   commands.registerCommand(Commands.removeAllColors, removeAllPeacockColorsHandler);
   commands.registerCommand(Commands.saveColorToFavorites, saveColorToFavoritesHandler);
   commands.registerCommand(Commands.enterColor, enterColorHandler);
+  commands.registerCommand(Commands.pickColor, pickColorHandler);
   commands.registerCommand(Commands.changeColorToRandom, changeColorToRandomHandler);
   commands.registerCommand(Commands.addRecommendedFavorites, addRecommendedFavoritesHandler);
   commands.registerCommand(Commands.changeColorToPeacockGreen, changeColorToPeacockGreenHandler);

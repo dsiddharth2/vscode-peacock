@@ -21,6 +21,7 @@ import {
   getColorCustomizationConfigFromWorkspace,
 } from './configuration';
 import { promptForColor, promptForFavoriteColor, promptForFavoriteColorName } from './inputs';
+import { colorPickerApi } from './color-picker';
 
 import { resetLiveSharePreviousColors } from './live-share';
 import { notify } from './notification';
@@ -69,6 +70,23 @@ export async function enterColorHandler(color?: string) {
   await applyColor(input);
   await updateColorSetting(input);
   return State.extensionContext;
+}
+
+export async function pickColorHandler(color?: string) {
+  const startingColor = getEnvironmentAwareColor();
+  const input = color
+    ? color
+    : await colorPickerApi.promptForColorPicker(startingColor || peacockGreen);
+  if (!input) {
+    if (startingColor) {
+      await applyColor(startingColor);
+      await updateColorSetting(startingColor);
+    } else {
+      await unapplyColors();
+    }
+    return State.extensionContext;
+  }
+  return enterColorHandler(input);
 }
 
 export async function changeColorToRandomHandler() {

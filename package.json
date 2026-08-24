@@ -2,7 +2,7 @@
   "name": "vscode-peacock",
   "displayName": "Peacock",
   "description": "Subtly change the workspace color of your workspace. Ideal when you have multiple VS Code instances and you want to quickly identify which is which.",
-  "version": "4.3.4",
+  "version": "4.4.0",
   "publisher": "johnpapa",
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
@@ -61,6 +61,11 @@
       {
         "command": "peacock.enterColor",
         "title": "Enter a Color",
+        "category": "Peacock"
+      },
+      {
+        "command": "peacock.pickColor",
+        "title": "Pick a Color",
         "category": "Peacock"
       },
       {
@@ -151,6 +156,10 @@
         },
         {
           "command": "peacock.enterColor",
+          "when": "workspaceFolderCount != 0"
+        },
+        {
+          "command": "peacock.pickColor",
           "when": "workspaceFolderCount != 0"
         },
         {

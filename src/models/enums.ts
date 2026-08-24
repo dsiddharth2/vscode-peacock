@@ -42,6 +42,7 @@ export enum Commands {
   changeColorToFavorite = 'peacock.changeColorToFavorite',
   darken = 'peacock.darken',
   enterColor = 'peacock.enterColor',
+  pickColor = 'peacock.pickColor',
   lighten = 'peacock.lighten',
   removeAllColors = 'peacock.removeAllColors',
   resetWorkspaceColors = 'peacock.resetWorkspaceColors',

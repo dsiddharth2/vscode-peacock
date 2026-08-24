@@ -20,8 +20,7 @@ Let's see Peacock in action!
 1. Create/Open a VSCode Workspace ([Peacock only works in a Workspace](/guide/#peacock-commands-are-not-appearing))
 1. Press `F1` to open the command palette
 1. Type `Peacock`
-1. Choose `Peacock: Change to a favorite color`
-1. Choose one of the pre-defined colors and see how it changes your editor
+1. Choose `Peacock: Pick a Color` and select any color, or choose `Peacock: Change to a favorite color` to pick from your favorites
 
 Now enjoy exploring the rest of the features explained in the docs, here!
 
@@ -35,6 +34,7 @@ Commands can be found in the command palette. Look for commands beginning with "
   - [user defined color](#input-formats)
   - a random color
 - Select a user-defined color from your [Favorite Colors](#favorite-colors)
+- [Pick any color](#pick-a-color) with a visual color picker
 - Save a user-defined color with the [Save Favorite Color](#save-favorite-color)
 - [Adjust the coloring of affected elements](#element-adjustments) by making them slightly darker or lighter to provide a subtle visual contrast between them
 - Saves colors to your workspace in the `.vscode/settings.json` file
@@ -78,6 +78,8 @@ Commands can be found in the command palette. Look for commands beginning with "
 
 After setting 1 or more colors (hex or named) in the user setting for `peacock.favoriteColors`, you can select **Peacock: Change to a Favorite Color** and you will be prompted with the list from `peacock.favoriteColors` from user settings.
 
+The menu also always includes **Pick any color…** (visual HSV picker) and **Enter a color…** (type a hex, RGB, or named color). You are not limited to the recommended favorites.
+
 ```text
 Gatsby Purple -> #123456
 Auth0 Orange -> #eb5424
@@ -109,6 +111,14 @@ When opening the Favorites command in the command palette, Peacock now previews 
 When you apply a color you enjoy, you can go to the workspace `settings.json` and copy the color's hex code, then create your own favorite color in your user `settings.json`. This involves a few manual steps and arguably is not obvious at first.
 
 The `Peacock: Save Current Color as Favorite Color` feature allows you to save the currently set color as a favorite color, and prompts you to name it.
+
+### Pick a Color
+
+**Peacock: Pick a Color** opens a visual HSV color picker so you can choose any color — not just the recommended favorites. Drag the saturation/brightness square and hue bar, or type a hex/RGB value. Peacock live-previews the color as you pick. Press **Apply Color** to save it, or **Cancel** (or Escape) to restore the previous color.
+
+You can also choose **Pick any color…** from the **Change to a Favorite Color** menu.
+
+The older **Peacock: Enter a Color** command is still available when you want to type a hex, RGB, HSL, HSV, or named HTML color. Editing `peacock.color` in `settings.json` still shows VS Code's built-in color decorator ([#531](https://github.com/johnpapa/vscode-peacock/pull/531)).
 
 ### Affected Elements
 
@@ -231,9 +241,10 @@ There are key bindings for the lighten command `alt+cmd+=` and for darken comman
 | Peacock: Reset Workspace Colors                 | Removes any of the color settings from the `.vscode/settings.json` file. If colors exist in the user settings, they may be applied |
 | Peacock: Remove All Global and Workspace Colors | Removes all of the color settings from both the Workspace `.vscode/settings.json` file and the Global user `settings.json` file.   |
 | Peacock: Enter a Color                          | Prompts you to enter a color (see [input formats](#input-formats))                                                                 |
+| Peacock: Pick a Color                           | Opens a visual color picker so you can select any color, with live preview                                                         |
 | Peacock: Color to Peacock Green                 | Sets the color to Peacock main color, #42b883                                                                                      |
 | Peacock: Surprise me with a Random Color        | Sets the color to a random color                                                                                                   |
-| Peacock: Change to a Favorite Color             | Prompts user to select from their Favorites                                                                                        |
+| Peacock: Change to a Favorite Color             | Prompts user to select from their Favorites, or pick/enter any color                                                               |
 | Peacock: Save Current Color to Favorites        | Save Current Color to their Favorites                                                                                              |
 | Peacock: Add Recommended Favorites              | Add the recommended favorites to user settings (override same names)                                                               |
 | Peacock: Darken                                 | Darkens the current color by `darkenLightenPercentage`                                                                             |
@@ -337,6 +348,19 @@ Peacock writes to VS Code's log output. You can open the output panel and select
 See the [CHANGELOG](/changelog) latest changes.
 
 ## FAQ
+
+### Why can I only pick a few colors?
+
+You are not limited to a small palette. **Peacock: Change to a Favorite Color** lists your `peacock.favoriteColors`, which started as 6 recommended brand colors and now ships 9. That list is a starting point, not a cap.
+
+To select any color:
+
+- Run **Peacock: Pick a Color** (visual HSV picker)
+- Run **Peacock: Enter a Color** and type a hex, RGB, HSL, or named HTML color
+- Choose **Pick any color…** or **Enter a color…** from the favorites menu
+- Or click the color decorator next to `peacock.color` in `settings.json`
+
+The original project tracked a visual picker request in [#450](https://github.com/johnpapa/vscode-peacock/issues/450). VS Code still has no extension API to open its built-in color picker from a command, so Peacock now includes its own picker. A settings.json-only workaround shipped earlier in [#531](https://github.com/johnpapa/vscode-peacock/pull/531).
 
 ### Peacock commands are not appearing
 

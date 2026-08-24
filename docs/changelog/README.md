@@ -2,6 +2,13 @@
 
 All notable changes to the code will be documented in this file.
 
+## 4.4.0
+
+### Features
+
+- Added **Peacock: Pick a Color** — a visual HSV color picker that can select any 24-bit color, not just the starter favorites. Live-previews as you drag, and typing hex or RGB is also supported. This addresses the long-standing request for a color picker on **Enter a Color** ([#450](https://github.com/johnpapa/vscode-peacock/issues/450)).
+- **Change to a Favorite Color** now always includes **Pick any color…** and **Enter a color…** at the top of the list, so you are not limited to the recommended favorites (originally 6 brand colors, now 9).
+
 ## 4.3.3
 
 ### Release update
