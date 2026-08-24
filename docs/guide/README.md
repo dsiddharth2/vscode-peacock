@@ -78,6 +78,8 @@ Commands can be found in the command palette. Look for commands beginning with "
 
 After setting 1 or more colors (hex or named) in the user setting for `peacock.favoriteColors`, you can select **Peacock: Change to a Favorite Color** and you will be prompted with the list from `peacock.favoriteColors` from user settings.
 
+The list also includes **Custom color…**. That opens a small color well plus a hex field so you can pick any color, not only the recommended favorites.
+
 ```text
 Gatsby Purple -> #123456
 Auth0 Orange -> #eb5424
@@ -109,6 +111,10 @@ When opening the Favorites command in the command palette, Peacock now previews 
 When you apply a color you enjoy, you can go to the workspace `settings.json` and copy the color's hex code, then create your own favorite color in your user `settings.json`. This involves a few manual steps and arguably is not obvious at first.
 
 The `Peacock: Save Current Color as Favorite Color` feature allows you to save the currently set color as a favorite color, and prompts you to name it.
+
+#### Custom Color
+
+Choose **Custom color…** from **Peacock: Change to a Favorite Color** to open a color well and hex field. Apply writes the color through the same Peacock path as a favorite. Cancel (or closing the panel) restores the previous workspace color.
 
 ### Affected Elements
 
@@ -233,7 +239,7 @@ There are key bindings for the lighten command `alt+cmd+=` and for darken comman
 | Peacock: Enter a Color                          | Prompts you to enter a color (see [input formats](#input-formats))                                                                 |
 | Peacock: Color to Peacock Green                 | Sets the color to Peacock main color, #42b883                                                                                      |
 | Peacock: Surprise me with a Random Color        | Sets the color to a random color                                                                                                   |
-| Peacock: Change to a Favorite Color             | Prompts user to select from their Favorites                                                                                        |
+| Peacock: Change to a Favorite Color             | Prompts user to select from their Favorites, or pick a custom color                                                                |
 | Peacock: Save Current Color to Favorites        | Save Current Color to their Favorites                                                                                              |
 | Peacock: Add Recommended Favorites              | Add the recommended favorites to user settings (override same names)                                                               |
 | Peacock: Darken                                 | Darkens the current color by `darkenLightenPercentage`                                                                             |
@@ -337,6 +343,10 @@ Peacock writes to VS Code's log output. You can open the output panel and select
 See the [CHANGELOG](/changelog) latest changes.
 
 ## FAQ
+
+### Why can I only pick a few colors?
+
+**Peacock: Change to a Favorite Color** lists your favorites (originally a small recommended set). Choose **Custom color…** in that same list to pick any color with a color well and hex field. You can also use **Peacock: Enter a Color** to type hex, RGB, HSL, or a named HTML color.
 
 ### Peacock commands are not appearing
 

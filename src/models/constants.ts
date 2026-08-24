@@ -17,6 +17,8 @@ export const defaultSaturation = 0.5;
 export const azureBlue = '#007fff';
 export const peacockGreen = '#42b883';
 
+export const customColorQuickPickLabel = 'Custom color…';
+
 export const peacockMementos = {
   favoritesVersion: `${extensionShortName}.favoritesVersion`,
   surpriseMeFavoritesOrderIndex: `${extensionShortName}.surpriseMeFavoritesOrderIndex`,
